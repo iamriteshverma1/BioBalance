@@ -1,0 +1,255 @@
+{
+  "users": [
+    {
+      "name": "John",
+      "age": 45,
+      "vitals": {
+        "blood_pressure": "140/90",
+        "blood_sugar": 150,
+        "oxygen_saturation": 95
+      },
+      "conditions": [
+        "hypertension",
+        "pre-diabetes"
+      ]
+    },
+    {
+      "name": "Sarah",
+      "age": 32,
+      "vitals": {
+        "blood_pressure": "118/78",
+        "blood_sugar": 85,
+        "oxygen_saturation": 98
+      },
+      "conditions": []
+    },
+    {
+      "name": "Mike",
+      "age": 58,
+      "vitals": {
+        "blood_pressure": "150/95",
+        "blood_sugar": 180,
+        "oxygen_saturation": 93
+      },
+      "conditions": [
+        "diabetes",
+        "hypertension"
+      ]
+    }
+  ],
+  "meal_database": {
+    "blood_pressure_friendly": [
+      {
+        "name": "Spinach and Quinoa Salad",
+        "description": "Rich in potassium, magnesium, and nitrates",
+        "nutrients": {
+          "potassium": 800,
+          "magnesium": 150,
+          "fiber": 8
+        },
+        "calories": 320
+      },
+      {
+        "name": "Grilled Salmon with Beets",
+        "description": "Omega-3 fatty acids and natural nitrates",
+        "nutrients": {
+          "omega3": 2.5,
+          "potassium": 650,
+          "nitrates": "high"
+        },
+        "calories": 380
+      },
+      {
+        "name": "Oatmeal with Berries",
+        "description": "Beta-glucan fiber and anthocyanins",
+        "nutrients": {
+          "beta_glucan": 3,
+          "antioxidants": "high",
+          "fiber": 6
+        },
+        "calories": 285
+      }
+    ],
+    "blood_sugar_friendly": [
+      {
+        "name": "Lentil and Vegetable Soup",
+        "description": "High fiber, low glycemic index",
+        "nutrients": {
+          "fiber": 12,
+          "protein": 18,
+          "glycemic_index": "low"
+        },
+        "calories": 240
+      },
+      {
+        "name": "Greek Yogurt with Nuts",
+        "description": "Protein-rich with healthy fats",
+        "nutrients": {
+          "protein": 15,
+          "healthy_fats": 8,
+          "carbs": 12
+        },
+        "calories": 200
+      },
+      {
+        "name": "Grilled Chicken with Broccoli",
+        "description": "Lean protein with fiber-rich vegetables",
+        "nutrients": {
+          "protein": 35,
+          "fiber": 5,
+          "carbs": 8
+        },
+        "calories": 300
+      }
+    ],
+    "oxygen_supporting": [
+      {
+        "name": "Iron-Rich Spinach Smoothie",
+        "description": "Supports hemoglobin and oxygen transport",
+        "nutrients": {
+          "iron": 5,
+          "vitamin_c": 60,
+          "folate": 200
+        },
+        "calories": 180
+      },
+      {
+        "name": "Beetroot and Carrot Juice",
+        "description": "Natural nitrates for oxygen uptake",
+        "nutrients": {
+          "nitrates": "high",
+          "vitamin_c": 45,
+          "antioxidants": "high"
+        },
+        "calories": 120
+      },
+      {
+        "name": "Pomegranate Bowl",
+        "description": "Antioxidants for circulation",
+        "nutrients": {
+          "antioxidants": "very_high",
+          "vitamin_c": 40,
+          "fiber": 4
+        },
+        "calories": 150
+      }
+    ]
+  },
+  "user_recommendations": {
+    "John": {
+      "vitals": {
+        "blood_pressure": "140/90",
+        "blood_sugar": 150,
+        "oxygen_saturation": 95
+      },
+      "conditions": [
+        "hypertension",
+        "pre-diabetes"
+      ],
+      "recommendations": [
+        {
+          "name": "Spinach and Quinoa Salad",
+          "description": "Rich in potassium, magnesium, and nitrates",
+          "nutrients": {
+            "potassium": 800,
+            "magnesium": 150,
+            "fiber": 8
+          },
+          "calories": 320
+        },
+        {
+          "name": "Grilled Salmon with Beets",
+          "description": "Omega-3 fatty acids and natural nitrates",
+          "nutrients": {
+            "omega3": 2.5,
+            "potassium": 650,
+            "nitrates": "high"
+          },
+          "calories": 380
+        },
+        {
+          "name": "Oatmeal with Berries",
+          "description": "Beta-glucan fiber and anthocyanins",
+          "nutrients": {
+            "beta_glucan": 3,
+            "antioxidants": "high",
+            "fiber": 6
+          },
+          "calories": 285
+        },
+        {
+          "name": "Lentil and Vegetable Soup",
+          "description": "High fiber, low glycemic index",
+          "nutrients": {
+            "fiber": 12,
+            "protein": 18,
+            "glycemic_index": "low"
+          },
+          "calories": 240
+        }
+      ]
+    },
+    "Sarah": {
+      "vitals": {
+        "blood_pressure": "118/78",
+        "blood_sugar": 85,
+        "oxygen_saturation": 98
+      },
+      "conditions": [],
+      "recommendations": []
+    },
+    "Mike": {
+      "vitals": {
+        "blood_pressure": "150/95",
+        "blood_sugar": 180,
+        "oxygen_saturation": 93
+      },
+      "conditions": [
+        "diabetes",
+        "hypertension"
+      ],
+      "recommendations": [
+        {
+          "name": "Spinach and Quinoa Salad",
+          "description": "Rich in potassium, magnesium, and nitrates",
+          "nutrients": {
+            "potassium": 800,
+            "magnesium": 150,
+            "fiber": 8
+          },
+          "calories": 320
+        },
+        {
+          "name": "Grilled Salmon with Beets",
+          "description": "Omega-3 fatty acids and natural nitrates",
+          "nutrients": {
+            "omega3": 2.5,
+            "potassium": 650,
+            "nitrates": "high"
+          },
+          "calories": 380
+        },
+        {
+          "name": "Oatmeal with Berries",
+          "description": "Beta-glucan fiber and anthocyanins",
+          "nutrients": {
+            "beta_glucan": 3,
+            "antioxidants": "high",
+            "fiber": 6
+          },
+          "calories": 285
+        },
+        {
+          "name": "Lentil and Vegetable Soup",
+          "description": "High fiber, low glycemic index",
+          "nutrients": {
+            "fiber": 12,
+            "protein": 18,
+            "glycemic_index": "low"
+          },
+          "calories": 240
+        }
+      ]
+    }
+  }
+}

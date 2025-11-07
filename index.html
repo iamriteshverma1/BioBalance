@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioBalance - Advanced Health Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle">Dark Mode</button>
+
+    <!-- Voice Assistant -->
+    <button id="voice-assistant-btn" class="voice-assistant-btn">🎙 Voice Assistant</button>
+
+    <!-- Health Trends Section -->
+    <section id="health-trends" class="section">
+        <div class="container">
+            <h2 class="section-title">Your Health Trends</h2>
+            <canvas id="health-trends-chart"></canvas>
+        </div>
+    </section>
+
+    <!-- Daily Health Tips -->
+    <section id="health-tips" class="section">
+        <div class="container">
+            <h2 class="section-title">Daily Health Tips</h2>
+            <ul class="health-tips-list">
+                <li>Drink at least 8 glasses of water daily.</li>
+                <li>Include leafy greens in your meals for better circulation.</li>
+                <li>Exercise for at least 30 minutes a day.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container flex justify-between items-center">
+            <div class="logo">
+                <h2 class="logo-text">BioBalance</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#education" class="nav-link">Learn</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Turn Your Health Data Into Smart Nutrition</h1>
+                <p class="hero-subtitle">Stop staring at your health numbers. Start using them. Get personalized meal recommendations based on your actual vitals - blood pressure, blood sugar, and oxygen levels.</p>
+                <div class="hero-cta">
+                    <button class="btn btn--primary btn--lg" id="get-started-btn">Get Started</button>
+                    <button class="btn btn--outline btn--lg" id="try-demo-btn">Try Demo</button>
+                    <!-- New profile / encryption controls -->
+                    <button class="btn btn--secondary btn--lg" id="save-profile-btn" title="Save current profile (encrypted)">Save Profile</button>
+                    <button class="btn btn--outline btn--lg" id="export-encrypted-btn" title="Export encrypted profile">Export Encrypted</button>
+                    <button class="btn btn--outline btn--lg" id="import-encrypted-btn" title="Import encrypted profile">Import Encrypted</button>
+                    <input type="file" id="import-encrypted-file" accept="application/json" style="display:none" />
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="health-metrics-preview">
+                    <div class="metric-card metric-card--bp">
+                        <div class="metric-icon">💓</div>
+                        <div class="metric-value">120/80</div>
+                        <div class="metric-label">Blood Pressure</div>
+                    </div>
+                    <div class="metric-card metric-card--bs">
+                        <div class="metric-icon">🩸</div>
+                        <div class="metric-value">85</div>
+                        <div class="metric-label">Blood Sugar</div>
+                    </div>
+                    <div class="metric-card metric-card--o2">
+                        <div class="metric-icon">🫁</div>
+                        <div class="metric-value">98%</div>
+                        <div class="metric-label">Oxygen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section">
+        <div class="container">
+            <h2 class="section-title">How BioBalance Works</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Input Your Vitals</h3>
+                    <p>Enter your current blood pressure, blood sugar, and oxygen levels</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Our algorithm analyzes your health data in real-time</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Personalized Meals</h3>
+                    <p>Get science-backed meal recommendations tailored to your body's needs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Profiles -->
+    <section class="sample-profiles hidden" id="sample-profiles">
+        <div class="container">
+            <h2 class="section-title">Try Sample Profiles</h2>
+            <div class="profiles-grid">
+                <div class="profile-card" data-profile="john">
+                    <h3>John, 45</h3>
+                    <div class="profile-vitals">
+                        <div class="vital">BP: 140/90</div>
+                        <div class="vital">Sugar: 150 mg/dL</div>
+                        <div class="vital">O2: 95%</div>
+                    </div>
+                    <div class="profile-conditions">Hypertension, Pre-diabetes</div>
+                    <button class="btn btn--secondary">Try John's Profile</button>
+                </div>
+                <div class="profile-card" data-profile="sarah">
+                    <h3>Sarah, 32</h3>
+                    <div class="profile-vitals">
+                        <div class="vital">BP: 118/78</div>
+                        <div class="vital">Sugar: 85 mg/dL</div>
+                        <div class="vital">O2: 98%</div>
+                    </div>
+                    <div class="profile-conditions">Healthy</div>
+                    <button class="btn btn--secondary">Try Sarah's Profile</button>
+                </div>
+                <div class="profile-card" data-profile="mike">
+                    <h3>Mike, 58</h3>
+                    <div class="profile-vitals">
+                        <div class="vital">BP: 150/95</div>
+                        <div class="vital">Sugar: 180 mg/dL</div>
+                        <div class="vital">O2: 93%</div>
+                    </div>
+                    <div class="profile-conditions">Diabetes, Hypertension</div>
+                    <button class="btn btn--secondary">Try Mike's Profile</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health Input Form -->
+    <section class="health-form-section hidden" id="health-form">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="form-title">Enter Your Health Vitals</h2>
+                <form id="vitals-form" class="vitals-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="age">Age</label>
+                            <input type="number" id="age" name="age" class="form-control" min="18" max="120" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="systolic">Systolic Blood Pressure</label>
+                            <input type="number" id="systolic" name="systolic" class="form-control" min="80" max="200" placeholder="120" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="diastolic">Diastolic Blood Pressure</label>
+                            <input type="number" id="diastolic" name="diastolic" class="form-control" min="40" max="120" placeholder="80" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="blood-sugar">Blood Sugar (mg/dL)</label>
+                            <input type="number" id="blood-sugar" name="blood-sugar" class="form-control" min="50" max="400" placeholder="85" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="oxygen">Oxygen Saturation (%)</label>
+                            <input type="number" id="oxygen" name="oxygen" class="form-control" min="80" max="100" placeholder="98" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="conditions">Existing Health Conditions</label>
+                        <select id="conditions" name="conditions" class="form-control" multiple>
+                            <option value="diabetes">Diabetes</option>
+                            <option value="hypertension">Hypertension</option>
+                            <option value="pre-diabetes">Pre-diabetes</option>
+                            <option value="heart-disease">Heart Disease</option>
+                            <option value="none">None</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn--primary btn--full-width">Get My Meal Recommendations</button>
+                        <button type="button" class="btn btn--outline" id="back-to-home">Back to Home</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Dashboard -->
+    <section class="results-section hidden" id="results">
+        <div class="container">
+            <h2 class="section-title">Your Health Dashboard</h2>
+            
+            <!-- Health Status Cards -->
+            <div class="health-status-grid" id="health-status">
+                <!-- Will be populated by JavaScript -->
+            </div>
+
+            <!-- Meal Recommendations -->
+            <div class="recommendations-section">
+                <h3 class="recommendations-title">Personalized Meal Recommendations</h3>
+                <div class="meals-grid" id="meal-recommendations">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <button class="btn btn--outline" id="try-another-profile">Try Another Profile</button>
+                <button class="btn btn--secondary" id="learn-more-btn">Learn More About Nutrition</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title">Understanding Your Health Through Nutrition</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon">💓</div>
+                    <h3>Blood Pressure & Diet</h3>
+                    <p>High sodium foods can raise blood pressure, while potassium-rich foods like spinach, bananas, and salmon help lower it. The DASH diet emphasizes fruits, vegetables, and lean proteins to maintain healthy blood pressure.</p>
+                    <ul class="education-list">
+                        <li>Limit sodium to under 2,300mg daily</li>
+                        <li>Increase potassium intake with leafy greens</li>
+                        <li>Choose lean proteins like fish and poultry</li>
+                    </ul>
+                </div>
+                <div class="education-card">
+                    <div class="education-icon">🩸</div>
+                    <h3>Blood Sugar Management</h3>
+                    <p>Complex carbohydrates and fiber help stabilize blood sugar levels, while simple sugars cause spikes. Pairing proteins with carbs slows glucose absorption and maintains steady energy levels.</p>
+                    <ul class="education-list">
+                        <li>Choose whole grains over refined carbs</li>
+                        <li>Include protein with each meal</li>
+                        <li>Eat fiber-rich vegetables and legumes</li>
+                    </ul>
+                </div>
+                <div class="education-card">
+                    <div class="education-icon">🫁</div>
+                    <h3>Oxygen & Circulation</h3>
+                    <p>Iron-rich foods support hemoglobin production for oxygen transport, while antioxidants improve circulation. Nitrate-rich vegetables like beets enhance oxygen delivery to muscles and organs.</p>
+                    <ul class="education-list">
+                        <li>Eat iron-rich foods like spinach and lean meats</li>
+                        <li>Include vitamin C to enhance iron absorption</li>
+                        <li>Try beetroot juice for improved circulation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>BioBalance</h3>
+                    <p>Personalized nutrition based on your health data</p>
+                </div>
+                <div class="footer-disclaimer">
+                    <p><strong>Disclaimer:</strong> BioBalance provides educational information and should not replace professional medical advice. Always consult with healthcare providers for medical decisions.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <!-- Passphrase modal for nicer UX -->
+    <div id="passphrase-modal" class="passphrase-modal hidden" aria-hidden="true">
+        <div class="passphrase-modal__overlay"></div>
+        <div class="passphrase-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="passphrase-modal-title">
+            <h3 id="passphrase-modal-title">Enter passphrase</h3>
+            <p id="passphrase-modal-message" class="passphrase-modal__message">Provide a passphrase to encrypt/decrypt your profile.</p>
+            <input id="passphrase-input" type="password" class="form-control" placeholder="Passphrase" />
+            <div class="passphrase-modal__actions">
+                <button id="passphrase-submit" class="btn btn--primary">OK</button>
+                <button id="passphrase-cancel" class="btn btn--outline">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="app-enhancements.js"></script>
+</body>
+</html>
