@@ -1,2 +1,12 @@
-# BioBalance
-BioBalance is an AI-driven health prediction tool designed to assess and monitor heart-related risks with the goal of preventing conditions like heart attacks and arterial blockages.
+# BioBalance - Fullstack Project
+
+## Overview
+BioBalance suggests meals based on user vitals (blood pressure, blood sugar, oxygen). This scaffold includes:
+- React + Vite + Tailwind frontend (login, register, dashboard, profile)
+- Flask backend (SQLite) with JWT auth and scoring-based recommender
+
+## Setup (Frontend)
+1. Node 18+ recommended
+2. Install:
+   ```bash
+   npm install
