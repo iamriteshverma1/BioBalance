@@ -100,17 +100,8 @@ view selected wellness information.
 # 🖥️ Application Preview
 
 <div align="center">
-
 <!-- Replace these with your actual screenshots -->
-
-<img src="./screenshots/dashboard.png" width="90%"/>
-
-<br><br>
-
-<img src="./screenshots/meals.png" width="43%"/>
-&nbsp;&nbsp;
-<img src="./screenshots/family-sharing.png" width="43%"/>
-
+<img src="./biobalance-overview.png" width="90%"/>
 </div>
 
 ---
